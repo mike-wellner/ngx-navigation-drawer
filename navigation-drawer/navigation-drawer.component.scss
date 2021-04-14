@@ -1,0 +1,75 @@
+$primary-color: #0D47A1;
+$secondary-color: #E3F2FD;
+$primary-color-inactive: #78909C;
+$secondary-color-inactive: #CFD8DC;
+
+$navigation-drawer-folded-width: 89px;
+
+:host {
+  height: 100%;
+}
+
+.navigation-drawer-unfolded {
+  width: auto;
+}
+
+.navigation-drawer-folded {
+  width: $navigation-drawer-folded-width;
+}
+
+.navigation-drawer {
+  border-right: 1px solid $secondary-color-inactive;
+  display: block;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+
+  .navigation-folding-control {
+    width: 100%;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px 0 0 0;
+    color: $primary-color-inactive;
+    transition: all 200ms ease-in-out;
+    mat-icon {
+      margin: -0.15rem 20px 0 0;
+      position: relative;
+      transition: all 200ms ease-in-out;
+    }
+  }
+
+  .navigation-folding-control:hover {
+    color: $primary-color;
+    background-color: $secondary-color;
+  }
+
+  .navigation-drawer-title {
+    width: 100%;
+    height: 128px;
+  }
+
+  .navigation-drawer-seperator {
+    width: 100%;
+    height: 1px;
+    background-color: $secondary-color-inactive;
+  }
+
+  .navigation-drawer-items {
+    flex-direction: row;
+    display: flex;
+    height: calc(100% - 159px); // 128px + 1px + 1px + (24+5)px
+  }
+  .navigation-drawer-main-items {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $secondary-color-inactive;
+  }
+  .navigation-drawer-sub-items {
+    display: flex;
+    flex-direction: column;
+  }
+}

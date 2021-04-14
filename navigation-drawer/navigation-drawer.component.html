@@ -1,0 +1,45 @@
+<div class='navigation-drawer' [ngClass]="{ 'navigation-drawer-folded': folded, 'navigation-drawer-unfolded': !folded }">
+
+  <!-- folding control -->
+  <div class='navigation-folding-control' (click)="toggleFolding()"><mat-icon>menu</mat-icon></div>
+
+  <!-- seperator -->
+  <div class='navigation-drawer-seperator'></div>
+
+  <!-- title -->
+  <div class='navigation-drawer-title'>
+    <!-- <app-person-item></app-person-item> -->
+  </div>
+
+  <!-- seperator -->
+  <div class='navigation-drawer-seperator'></div>
+
+  <!-- items -->
+  <div class='navigation-drawer-items'>
+    <!-- main -->
+    <div class='navigation-drawer-main-items'>
+      <app-navigation-drawer-item
+        *ngFor="let i of navigationDrawerItems"
+        [icon]="i.icon"
+        [description]="i.description"
+        [matTooltip]="folded ? i.description : ''"
+        [folded]="folded"
+        [selected]="isSelected(i.id)"
+        (click)="navigation(i.id, i.navigationTarget)">
+      </app-navigation-drawer-item>
+    </div>
+
+    <!-- sub -->
+    <div class='navigation-drawer-sub-items'>
+      <app-navigation-drawer-item
+        *ngFor="let i of getSubItemsForCurrentId()"
+        [icon]="i.icon"
+        [description]="i.description"
+        [matTooltip]="i.description"
+        [folded]="subFolded"
+        [selected]="isSubSelected(i.id)"
+        (click)="subNavigation(i.id, i.action)">
+      </app-navigation-drawer-item>
+    </div>
+  </div>
+</div>
