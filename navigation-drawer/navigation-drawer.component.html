@@ -19,26 +19,28 @@
     <!-- main -->
     <div class='navigation-drawer-main-items'>
       <app-navigation-drawer-item
-        *ngFor="let i of navigationDrawerItems"
-        [icon]="i.icon"
-        [description]="i.description"
-        [matTooltip]="folded ? i.description : ''"
+        *ngFor="let item of navigationDrawerItems; let i = index"
+        [icon]="item.icon"
+        [description]="item.description"
+        [matTooltip]="folded ? item.description : ''"
         [folded]="folded"
-        [selected]="isSelected(i.id)"
-        (click)="navigation(i.id, i.navigationTarget)">
+        [selected]="isSelected(item.id)"
+        (click)="navigation(item.id, item.navigationTarget)"
+        tabindex={{i+1}}>
       </app-navigation-drawer-item>
     </div>
 
     <!-- sub -->
     <div class='navigation-drawer-sub-items'>
       <app-navigation-drawer-item
-        *ngFor="let i of getSubItemsForCurrentId()"
+        *ngFor="let i of getSubItemsForCurrentId(); let j = index"
         [icon]="i.icon"
         [description]="i.description"
         [matTooltip]="i.description"
         [folded]="subFolded"
         [selected]="isSubSelected(i.id)"
-        (click)="subNavigation(i.id, i.action)">
+        (click)="subNavigation(i.id, i.action)"
+        tabindex={{j+1}}>
       </app-navigation-drawer-item>
     </div>
   </div>
