@@ -47,20 +47,20 @@ export class NavigationDrawerComponent {
     this.currentFocusMainId = this.currentMainId;
     this.currentFocusSubId = this.currentSubId;
     this.focusOnMain = false;
-    this.focusOnSub = true;
+    this.focusOnSub = false;
   }
 
   @HostListener('window:keydown', ['$event'])
   private async translateEnterToClick(event: KeyboardEvent) {
     if (event.key === 'Enter') {
       if (this.focusOnMain) {
-        const mainItem = this.getItemForMainId(this.currentMainId);
+        const mainItem = this.getItemForMainId(this.currentFocusMainId);
         if (mainItem !== undefined) {
           await this.mainNavigation(mainItem.id, mainItem.navigationTarget);
         }
       }
       if (this.focusOnSub) {
-        const subItem = this.getSubItemForIds(this.currentFocusMainId, this.currentFocusSubId);
+        const subItem = this.getSubItemForIds(this.currentMainId, this.currentFocusSubId);
         if (subItem !== undefined) {
           this.subNavigation(subItem.id, subItem.action);
         }
