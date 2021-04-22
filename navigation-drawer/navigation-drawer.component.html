@@ -1,4 +1,4 @@
-<div class='navigation-drawer' [ngClass]="{ 'navigation-drawer-folded': folded, 'navigation-drawer-unfolded': !folded }">
+<div class='navigation-drawer' [ngClass]="{ 'navigation-drawer-folded': mainFolded, 'navigation-drawer-unfolded': !mainFolded }">
 
   <!-- folding control -->
   <div class='navigation-folding-control' (click)="toggleFolding()"><mat-icon>menu</mat-icon></div>
@@ -19,13 +19,15 @@
     <!-- main -->
     <div class='navigation-drawer-main-items'>
       <app-navigation-drawer-item
-        *ngFor="let item of navigationDrawerItems; let i = index"
+        *ngFor="let item of navigationDrawerMainItems; let i = index"
         [icon]="item.icon"
         [description]="item.description"
-        [matTooltip]="folded ? item.description : ''"
-        [folded]="folded"
-        [selected]="isSelected(item.id)"
-        (click)="navigation(item.id, item.navigationTarget)"
+        [matTooltip]="mainFolded ? item.description : ''"
+        [folded]="mainFolded"
+        [selected]="isMainSelected(item.id)"
+        (click)="mainNavigation(item.id, item.navigationTarget)"
+        (focusin)="onMainFocus(item.id)"
+        (focusout)="onMainBlur()"
         tabindex={{i+1}}>
       </app-navigation-drawer-item>
     </div>
@@ -33,13 +35,15 @@
     <!-- sub -->
     <div class='navigation-drawer-sub-items'>
       <app-navigation-drawer-item
-        *ngFor="let i of getSubItemsForCurrentId(); let j = index"
-        [icon]="i.icon"
-        [description]="i.description"
-        [matTooltip]="i.description"
+        *ngFor="let item of getSubItemsForMainId(currentMainId); let j = index"
+        [icon]="item.icon"
+        [description]="item.description"
+        [matTooltip]="item.description"
         [folded]="subFolded"
-        [selected]="isSubSelected(i.id)"
-        (click)="subNavigation(i.id, i.action)"
+        [selected]="isSubSelected(item.id)"
+        (click)="subNavigation(item.id, item.action)"
+        (focusin)="onSubFocus(item.id)"
+        (focusout)="onSubBlur()"
         tabindex={{j+1}}>
       </app-navigation-drawer-item>
     </div>

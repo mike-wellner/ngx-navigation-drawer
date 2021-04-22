@@ -1,8 +1,8 @@
-import { Component, ChangeDetectorRef, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectorRef, ChangeDetectionStrategy, Input, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
-interface I_NavigationDrawerItem {
+interface I_NavigationDrawerMainItem {
   id: number;
   icon: string;
   description: string;
@@ -25,28 +25,82 @@ interface I_NavigationDrawerSubItem {
 })
 export class NavigationDrawerComponent {
 
-  @Input() navigationDrawerItems: I_NavigationDrawerItem[] = [];
+  @Input() navigationDrawerMainItems: I_NavigationDrawerMainItem[] = [];
   @Input() navigationDrawerSubItems: I_NavigationDrawerSubItem[] = [];
-  @Input() folded = false;
+  @Input() mainFolded = false;
   @Input() subFolded = true;
-  @Input() currentId = 1;
+  @Input() currentMainId = 1;
   @Input() currentSubId = 11;
 
+  focusOnSub: boolean;
+  focusOnMain: boolean;
+  currentFocusMainId: number;
+  currentFocusSubId: number;
   changeOfFoldingState: Subject<boolean> = new Subject<boolean>();
-  changeOfIndex: Subject<number> = new Subject<number>();
+  changeOfMainIndex: Subject<number> = new Subject<number>();
   changeOfSubIndex: Subject<number> = new Subject<number>();
 
   constructor(
     private router: Router,
     private changeDetectorRef: ChangeDetectorRef
-  ) {}
-
-  getSubItemsForCurrentId(): I_NavigationDrawerSubItem[] {
-    return this.navigationDrawerSubItems.filter(item => item.parentId === this.currentId);
+  ) {
+    this.currentFocusMainId = this.currentMainId;
+    this.currentFocusSubId = this.currentSubId;
+    this.focusOnMain = false;
+    this.focusOnSub = true;
   }
 
-  isSelected(id: number): boolean {
-    return id === this.currentId;
+  @HostListener('window:keydown', ['$event'])
+  private async translateEnterToClick(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      if (this.focusOnMain) {
+        const mainItem = this.getItemForMainId(this.currentMainId);
+        if (mainItem !== undefined) {
+          await this.mainNavigation(mainItem.id, mainItem.navigationTarget);
+        }
+      }
+      if (this.focusOnSub) {
+        const subItem = this.getSubItemForIds(this.currentFocusMainId, this.currentFocusSubId);
+        if (subItem !== undefined) {
+          this.subNavigation(subItem.id, subItem.action);
+        }
+      }
+    }
+  }
+
+  getSubItemsForMainId(mainId: number): I_NavigationDrawerSubItem[] {
+    return this.navigationDrawerSubItems.filter(item => item.parentId === mainId);
+  }
+
+  getSubItemForIds(mainId: number, subId: number): I_NavigationDrawerSubItem | undefined {
+    const subItems = this.getSubItemsForMainId(mainId);
+    return subItems.find(item => item.id === subId);
+  }
+
+  getItemForMainId(id: number): I_NavigationDrawerMainItem | undefined {
+    return this.navigationDrawerMainItems.find(item => item.id === id);
+  }
+
+  onMainFocus(id: number): void {
+    this.currentFocusMainId = id;
+    this.focusOnMain = true;
+  }
+
+  onSubFocus(id: number): void {
+    this.currentFocusSubId = id;
+    this.focusOnSub = true;
+  }
+
+  onMainBlur(): void {
+    this.focusOnMain = false;
+  }
+
+  onSubBlur(): void {
+    this.focusOnSub = false;
+  }
+
+  isMainSelected(id: number): boolean {
+    return id === this.currentMainId;
   }
 
   isSubSelected(id: number): boolean {
@@ -54,14 +108,14 @@ export class NavigationDrawerComponent {
   }
 
   toggleFolding(): void {
-    this.folded = !this.folded;
-    this.changeOfFoldingState.next(this.folded);
+    this.mainFolded = !this.mainFolded;
+    this.changeOfFoldingState.next(this.mainFolded);
     this.changeDetectorRef.markForCheck();
   }
 
-  async navigation(id: number, target: string): Promise<void> {
-    this.currentId = id;
-    this.changeOfIndex.next(this.currentId);
+  async mainNavigation(id: number, target: string): Promise<void> {
+    this.currentMainId = id;
+    this.changeOfMainIndex.next(this.currentMainId);
     await this.router.navigateByUrl(target);
   }
 
