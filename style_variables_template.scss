@@ -1,0 +1,32 @@
+// https://htmlcolorcodes.com/color-chart/
+// https://webaim.org/resources/contrastchecker/
+
+$white: #FFFFFF;
+$soft-black: #212121; // RGB 33, 33, 33
+
+$background-color: $white;
+
+// RGB 27, 94, 32
+// 1B5E20 <-> white
+// Contrast Ratio = 7.86
+// WCAG AAA: Pass
+$primary-color: #1B5E20;
+
+// RGB 200, 230, 201
+// C8E6C9 <-> soft-black
+// Contrast Ratio = 11.97
+// WCAG AAA: Pass
+$secondary-color: #C8E6C9;
+
+// RGB 117, 117, 117
+// 757575 <-> white
+// Contrast Ratio = 4.6
+// WCAG AA: Pass
+// WCAG AAA: Fail
+$primary-color-inactive: #757575;
+
+// RGB 189, 189, 189
+// BDBDBD <-> soft-black
+// Contrast Ratio = 8.57
+// WCAG AAA: Pass
+$secondary-color-inactive: #BDBDBD;
