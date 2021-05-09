@@ -25,7 +25,7 @@
         [matTooltip]="mainFolded ? item.description : ''"
         [folded]="mainFolded"
         [selected]="isMainSelected(item.id)"
-        (click)="mainNavigation(item.id, item.navigationTarget)"
+        (click)="mainNavigation(item.id, item.action)"
         (focusin)="onMainFocus(item.id)"
         (focusout)="onMainBlur()"
         tabindex={{i+1}}>
