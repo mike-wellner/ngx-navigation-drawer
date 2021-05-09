@@ -6,7 +6,7 @@ interface I_NavigationDrawerMainItem {
   id: number;
   icon: string;
   description: string;
-  navigationTarget: string;
+  action: () => Promise<void>;
 }
 
 interface I_NavigationDrawerSubItem {
@@ -41,7 +41,6 @@ export class NavigationDrawerComponent {
   changeOfSubIndex: Subject<number> = new Subject<number>();
 
   constructor(
-    private router: Router,
     private changeDetectorRef: ChangeDetectorRef
   ) {
     this.currentFocusMainId = this.currentMainId;
@@ -56,7 +55,7 @@ export class NavigationDrawerComponent {
       if (this.focusOnMain) {
         const mainItem = this.getItemForMainId(this.currentFocusMainId);
         if (mainItem !== undefined) {
-          await this.mainNavigation(mainItem.id, mainItem.navigationTarget);
+          await this.mainNavigation(mainItem.id, mainItem.action);
         }
       }
       if (this.focusOnSub) {
@@ -113,10 +112,10 @@ export class NavigationDrawerComponent {
     this.changeDetectorRef.markForCheck();
   }
 
-  async mainNavigation(id: number, target: string): Promise<void> {
+  async mainNavigation(id: number, callbackFunction: () => Promise<void>): Promise<void> {
     this.currentMainId = id;
     this.changeOfMainIndex.next(this.currentMainId);
-    await this.router.navigateByUrl(target);
+    await callbackFunction();
   }
 
   subNavigation(id: number, callbackFunction: () => void): void {
