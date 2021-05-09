@@ -6,7 +6,7 @@ interface I_NavigationDrawerMainItem {
   id: number;
   icon: string;
   description: string;
-  action: () => Promise<void>;
+  action: () => void;
 }
 
 interface I_NavigationDrawerSubItem {
@@ -50,12 +50,12 @@ export class NavigationDrawerComponent {
   }
 
   @HostListener('window:keydown', ['$event'])
-  private async translateEnterToClick(event: KeyboardEvent) {
+  private translateEnterToClick(event: KeyboardEvent) {
     if (event.key === 'Enter') {
       if (this.focusOnMain) {
         const mainItem = this.getItemForMainId(this.currentFocusMainId);
         if (mainItem !== undefined) {
-          await this.mainNavigation(mainItem.id, mainItem.action);
+          this.mainNavigation(mainItem.id, mainItem.action);
         }
       }
       if (this.focusOnSub) {
@@ -112,10 +112,10 @@ export class NavigationDrawerComponent {
     this.changeDetectorRef.markForCheck();
   }
 
-  async mainNavigation(id: number, callbackFunction: () => Promise<void>): Promise<void> {
+  mainNavigation(id: number, callbackFunction: () => void): void {
     this.currentMainId = id;
     this.changeOfMainIndex.next(this.currentMainId);
-    await callbackFunction();
+    callbackFunction();
   }
 
   subNavigation(id: number, callbackFunction: () => void): void {
