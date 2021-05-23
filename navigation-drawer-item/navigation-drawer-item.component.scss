@@ -6,7 +6,7 @@ $navigation-drawer-item-height: 48px;
   display:flex;
   width: 100%;
   height: $navigation-drawer-item-height;
-  color: $primary-color-inactive;
+  color: $primary-grayscale;
   background-color: $background-color;
 
   .navigation-drawer-item {
@@ -37,7 +37,7 @@ $navigation-drawer-item-height: 48px;
 
   .selected {
     color: $soft-black;
-    background-color: $secondary-color-inactive;
+    background-color: $secondary-grayscale;
   }
 
   .navigation-drawer-item-icon {

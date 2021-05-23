@@ -15,14 +15,14 @@ $navigation-drawer-folded-width: 89px;
 }
 
 app-navigation-drawer-item:focus  {
-  outline: $secondary-color-inactive solid 0px;
+  outline: $secondary-grayscale solid 0px;
   ::ng-deep .navigation-drawer-item {
     border: 1px solid $soft-black !important;
   }
 }
 
 .navigation-drawer {
-  border-right: 1px solid $secondary-color-inactive;
+  border-right: 1px solid $secondary-grayscale;
   display: block;
   flex-direction: column;
   justify-content: flex-start;
@@ -37,7 +37,7 @@ app-navigation-drawer-item:focus  {
     flex-direction: row;
     justify-content: flex-end;
     padding: 5px 0 0 0;
-    color: $primary-color-inactive;
+    color: $primary-grayscale;
     transition: all 200ms ease-in-out;
     mat-icon {
       margin: -0.15rem 20px 0 0;
@@ -59,7 +59,7 @@ app-navigation-drawer-item:focus  {
   .navigation-drawer-seperator {
     width: 100%;
     height: 1px;
-    background-color: $secondary-color-inactive;
+    background-color: $secondary-grayscale;
   }
 
   .navigation-drawer-items {
@@ -70,7 +70,7 @@ app-navigation-drawer-item:focus  {
   .navigation-drawer-main-items {
     display: flex;
     flex-direction: column;
-    border-right: 1px solid $secondary-color-inactive;
+    border-right: 1px solid $secondary-grayscale;
   }
   .navigation-drawer-sub-items {
     display: flex;
