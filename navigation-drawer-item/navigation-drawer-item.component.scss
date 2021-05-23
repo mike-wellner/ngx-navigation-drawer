@@ -19,6 +19,7 @@ $navigation-drawer-item-height: 48px;
     user-select: none;
     white-space: nowrap;
     border-radius: 3px;
+    border: 1px solid $background-color;
     cursor: pointer;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     font-size: 1em;
@@ -35,16 +36,18 @@ $navigation-drawer-item-height: 48px;
   }
 
   .selected {
-    color: $primary-color;
+    color: $soft-black;
+    background-color: $secondary-color-inactive;
   }
 
   .navigation-drawer-item-icon {
-    mat-icon {
-      align-items: center;
-    }
+    display: flex;
     margin-right: 5px;
     margin-left: 5px;
     align-items: center;
+    mat-icon {
+      align-items: center;
+    }
   }
 
   .navigation-drawer-item-label {

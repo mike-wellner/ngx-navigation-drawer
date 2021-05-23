@@ -17,7 +17,7 @@ $navigation-drawer-folded-width: 89px;
 app-navigation-drawer-item:focus  {
   outline: $secondary-color-inactive solid 0px;
   ::ng-deep .navigation-drawer-item {
-    background-color: $secondary-color-inactive;
+    border: 1px solid $soft-black !important;
   }
 }
 
