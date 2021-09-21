@@ -1,5 +1,4 @@
 import { Component, ChangeDetectorRef, ChangeDetectionStrategy, Input, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 interface I_NavigationDrawerMainItem {
