@@ -35,9 +35,9 @@ export class NavigationDrawerComponent {
   focusOnMain: boolean;
   currentFocusMainId: number;
   currentFocusSubId: number;
-  changeOfFoldingState: Subject<boolean> = new Subject<boolean>();
-  changeOfMainIndex: Subject<number> = new Subject<number>();
-  changeOfSubIndex: Subject<number> = new Subject<number>();
+  changeOfFoldingState = new Subject<boolean>();
+  changeOfMainIndex = new Subject<number>();
+  changeOfSubIndex = new Subject<number>();
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef
