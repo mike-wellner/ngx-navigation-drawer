@@ -1,20 +1,6 @@
 import { Component, ChangeDetectorRef, ChangeDetectionStrategy, Input, HostListener } from '@angular/core';
 import { Subject } from 'rxjs';
-
-interface I_NavigationDrawerMainItem {
-  id: number;
-  icon: string;
-  description: string;
-  action: () => void;
-}
-
-interface I_NavigationDrawerSubItem {
-  id: number;
-  parentId: number;
-  icon: string;
-  description: string;
-  action: () => void;
-}
+import { I_NavigationDrawerItem } from '../models/navigation-drawer-item';
 
 @Component({
   selector: 'app-navigation-drawer',
@@ -24,8 +10,8 @@ interface I_NavigationDrawerSubItem {
 })
 export class NavigationDrawerComponent {
 
-  @Input() navigationDrawerMainItems: I_NavigationDrawerMainItem[] = [];
-  @Input() navigationDrawerSubItems: I_NavigationDrawerSubItem[] = [];
+  @Input() mainNavigationDrawerItems: I_NavigationDrawerItem[] = [];
+  @Input() subNavigationDrawerItems: I_NavigationDrawerItem[] = [];
   @Input() mainFolded = false;
   @Input() subFolded = true;
   @Input() currentMainId = 1;
@@ -66,17 +52,17 @@ export class NavigationDrawerComponent {
     }
   }
 
-  getSubItemsForMainId(mainId: number): I_NavigationDrawerSubItem[] {
-    return this.navigationDrawerSubItems.filter(item => item.parentId === mainId);
+  getSubItemsForMainId(mainId: number): I_NavigationDrawerItem[] {
+    return this.subNavigationDrawerItems.filter(item => item.parentId === mainId);
   }
 
-  getSubItemForIds(mainId: number, subId: number): I_NavigationDrawerSubItem | undefined {
+  getSubItemForIds(mainId: number, subId: number): I_NavigationDrawerItem | undefined {
     const subItems = this.getSubItemsForMainId(mainId);
     return subItems.find(item => item.id === subId);
   }
 
-  getItemForMainId(id: number): I_NavigationDrawerMainItem | undefined {
-    return this.navigationDrawerMainItems.find(item => item.id === id);
+  getItemForMainId(id: number): I_NavigationDrawerItem | undefined {
+    return this.mainNavigationDrawerItems.find(item => item.id === id);
   }
 
   onMainFocus(id: number): void {
