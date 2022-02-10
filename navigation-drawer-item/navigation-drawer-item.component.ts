@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class NavigationDrawerItemComponent {
 
-  @Input() icon = 'error';
-  @Input() description = 'description_empty';
+  @Input() icon = '';
+  @Input() description = '';
   @Input() folded = true;
   @Input() selected = false;
 
