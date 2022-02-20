@@ -1,6 +1,4 @@
-<div class="navigation-drawer-item-wrapper">
-  <div [ngClass]="{ 'selected': selected }" class="navigation-drawer-item">
-    <div class="navigation-drawer-item-icon"><mat-icon *ngIf="icon">{{icon}}</mat-icon></div>
-    <div class="navigation-drawer-item-label" *ngIf="!folded"><span>{{description}}</span></div>
-  </div>
+<div [ngClass]="{ 'selected': selected }" class="navigation-drawer-item">
+  <div class="navigation-drawer-item-icon"><mat-icon *ngIf="icon">{{icon}}</mat-icon></div>
+  <div class="navigation-drawer-item-label" *ngIf="!folded"><span>{{description}}</span></div>
 </div>
