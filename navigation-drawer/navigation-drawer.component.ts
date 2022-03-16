@@ -14,6 +14,8 @@ export class NavigationDrawerComponent {
   @Input() subNavigationDrawerItems: I_NavigationDrawerItem[] = [];
   @Input() mainFolded = false;
   @Input() subFolded = true;
+  @Input() enableMainFolding = true;
+  @Input() enableSubFolding = true;
   @Input() currentMainId = 1;
   @Input() currentSubId = 11;
 
@@ -21,7 +23,8 @@ export class NavigationDrawerComponent {
   focusOnMain: boolean;
   currentFocusMainId: number;
   currentFocusSubId: number;
-  changeOfFoldingState = new Subject<boolean>();
+  changeOfMainFoldingState = new Subject<boolean>();
+  changeOfSubFoldingState = new Subject<boolean>();
   changeOfMainIndex = new Subject<number>();
   changeOfSubIndex = new Subject<number>();
 
@@ -91,9 +94,15 @@ export class NavigationDrawerComponent {
     return id === this.currentSubId;
   }
 
-  toggleFolding(): void {
+  toggleFoldingMain(): void {
     this.mainFolded = !this.mainFolded;
-    this.changeOfFoldingState.next(this.mainFolded);
+    this.changeOfMainFoldingState.next(this.mainFolded);
+    this.changeDetectorRef.markForCheck();
+  }
+
+  toggleFoldingSub(): void {
+    this.subFolded = !this.subFolded;
+    this.changeOfSubFoldingState.next(this.subFolded);
     this.changeDetectorRef.markForCheck();
   }
 
