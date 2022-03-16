@@ -1,23 +1,26 @@
-<div class="navigation-drawer" [ngClass]="{ 'navigation-drawer-folded': mainFolded, 'navigation-drawer-unfolded': !mainFolded }">
+<div class="navigation-drawer" [ngClass]="{ 'main-folded': mainFolded, 'sub-folded': subFolded }">
 
   <!-- folding control -->
-  <div class="navigation-folding-control" (click)="toggleFolding()"><mat-icon>menu</mat-icon></div>
+  <div class="navigation-folding-control">
+    <mat-icon *ngIf="enableMainFolding" (click)="toggleFoldingMain()">menu</mat-icon>
+    <mat-icon *ngIf="enableSubFolding" (click)="toggleFoldingSub()">menu</mat-icon>
+  </div>
 
   <!-- seperator -->
-  <div class="navigation-drawer-seperator"></div>
+  <div class="navigation-drawer-seperator right-border"></div>
 
   <!-- projection -->
-  <div class="navigation-drawer-projection">
+  <div class="navigation-drawer-projection right-border">
     <ng-content class="projected-content"></ng-content>
   </div>
 
   <!-- seperator -->
-  <div class="navigation-drawer-seperator"></div>
+  <div class="navigation-drawer-seperator right-border"></div>
 
   <!-- items -->
   <div class="navigation-drawer-items" autofocus>
     <!-- main -->
-    <div class="navigation-drawer-main-items">
+    <div class="navigation-drawer-main-items right-border" [ngClass]="{ 'main-folded': mainFolded }">
       <app-navigation-drawer-item
         *ngFor="let item of mainNavigationDrawerItems; let i = index"
         [icon]="item.icon"
@@ -33,7 +36,7 @@
     </div>
 
     <!-- sub -->
-    <div class="navigation-drawer-sub-items">
+    <div class="navigation-drawer-sub-items right-border" [ngClass]="{ 'sub-folded': subFolded }">
       <app-navigation-drawer-item
         *ngFor="let item of getSubItemsForMainId(currentMainId); let j = index"
         [icon]="item.icon"

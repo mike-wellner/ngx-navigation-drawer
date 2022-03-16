@@ -1,17 +1,10 @@
 @import '../styles.scss';
 
-$navigation-drawer-folded-width: 89px;
+$folded-width: 51px;
+$unfolded-width: 181px;
 
-:host {
-  height: 100%;
-}
-
-.navigation-drawer-unfolded {
-  width: auto;
-}
-
-.navigation-drawer-folded {
-  width: $navigation-drawer-folded-width;
+.right-border {
+  border-right: 1px solid $secondary-grayscale;
 }
 
 app-navigation-drawer-item:focus  {
@@ -22,27 +15,37 @@ app-navigation-drawer-item:focus  {
 }
 
 .navigation-drawer {
-  border-right: 1px solid $secondary-grayscale;
-  display: block;
+  width: calc($unfolded-width + $unfolded-width);
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
   height: 100%;
   background-color: $white;
 
+  &.main-folded:not(.sub-folded) {
+    width: calc($unfolded-width + $folded-width);
+  }
+  &.sub-folded:not(.main-folded) {
+    width: calc($unfolded-width + $folded-width);
+  }
+  &.main-folded.sub-folded {
+    width: calc($folded-width + $folded-width);
+  }
+
   .navigation-folding-control {
     width: 100%;
-    height: 24px;
+    height: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    padding: 5px 0 0 0;
+    align-items: center;
+    justify-content: flex-start;
     color: $primary-grayscale;
-    transition: all 200ms ease-in-out;
+    border-right: 1px solid $secondary-grayscale;
+
     mat-icon {
-      margin: -0.15rem 5px 0 0;
+      padding: 3px 5px 3px 5px;
       position: relative;
-      transition: all 200ms ease-in-out;
     }
   }
 
@@ -53,29 +56,41 @@ app-navigation-drawer-item:focus  {
 
   .navigation-drawer-projection {
     display: flex;
-    width: 100%;
+    width: calc(100% - 1px);
     height: 128px;
   }
 
   .navigation-drawer-seperator {
-    width: 100%;
+    width: calc(100% - 1px);
     height: 1px;
     background-color: $secondary-grayscale;
   }
 
   .navigation-drawer-items {
-    flex-direction: row;
     display: flex;
-    height: calc(100% - 159px); // 128px + 1px + 1px + (24+5)px
-    background-color: $white;
+    flex-direction: row;
+    height: calc(100% - 160px); // 128px + 1px + 1px + 30px
   }
+
   .navigation-drawer-main-items {
     display: flex;
     flex-direction: column;
-    border-right: 1px solid $secondary-grayscale;
+    height: 100%;
+    width: calc($unfolded-width - 1px);
+    &.main-folded {
+      width: calc($folded-width - 1px);
+    }
   }
+
   .navigation-drawer-sub-items {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: calc($unfolded-width - 1px);
+    &.sub-folded {
+      width: calc($folded-width - 1px);
+    }
   }
 }
+
+
