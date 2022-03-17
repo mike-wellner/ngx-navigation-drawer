@@ -41,7 +41,7 @@
         *ngFor="let item of getSubItemsForMainId(currentMainId); let j = index"
         [icon]="item.icon"
         [description]="item.description"
-        [matTooltip]="item.description"
+        [matTooltip]="subFolded ? item.description : ''"
         [folded]="subFolded"
         [selected]="isSubSelected(item.id)"
         (click)="subNavigation(item.id, item.action)"
