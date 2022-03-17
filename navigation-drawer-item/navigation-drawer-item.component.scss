@@ -33,6 +33,7 @@
     mat-icon {
       align-items: center;
     }
+    flex-shrink: 0;
   }
 
   .label {
@@ -41,6 +42,7 @@
     align-items: center;
     overflow-x: hidden;
     text-overflow: ellipsis;
+    flex-shrink: 1;
   }
 }
 
