@@ -2,6 +2,11 @@ import { Component, ChangeDetectorRef, ChangeDetectionStrategy, Input, HostListe
 import { Subject } from 'rxjs';
 import { I_NavigationDrawerItem } from '../models/navigation-drawer-item';
 
+
+
+/**
+ *
+ */
 @Component({
   selector: 'app-navigation-drawer',
   templateUrl: './navigation-drawer.component.html',
