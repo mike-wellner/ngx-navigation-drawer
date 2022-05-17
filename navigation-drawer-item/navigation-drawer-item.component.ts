@@ -1,9 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+
+
+/**
+ *
+ */
 @Component({
   selector: 'app-navigation-drawer-item',
   templateUrl: './navigation-drawer-item.component.html',
-  styleUrls: ['./navigation-drawer-item.component.scss']
+  styleUrls: ['./navigation-drawer-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationDrawerItemComponent {
 
