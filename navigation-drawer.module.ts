@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule, MatTooltipDefaultOptions, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@angular/material/tooltip';
-
 import { NavigationDrawerItemComponent } from './navigation-drawer-item/navigation-drawer-item.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
