@@ -1,7 +1,6 @@
-# navigation-drawer
+# ngx-navigation-drawer
 
-Angular navigation drawer module to be included as submodule.
-Create a style_*.scss from the templates and include the module as git submodule.
+An Angular navigation drawer module.
 
 If you are planning to use content projection please pass a container with 3 different sections:
 +-----+----------------+----------------+

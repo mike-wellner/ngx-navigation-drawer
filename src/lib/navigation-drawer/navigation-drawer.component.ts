@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef, ChangeDetectionStrategy, Input, HostListener } from '@angular/core';
 import { Subject } from 'rxjs';
-import { I_NavigationDrawerItem } from '../models/navigation-drawer-item';
+import { I_NavigationDrawerItem } from '../navigation-drawer-item';
 
 
 
