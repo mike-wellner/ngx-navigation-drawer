@@ -9,7 +9,7 @@
     "ng": "ng",
     "lint": "eslint -c .eslintrc.js --ext \".ts,.js\" src",
     "build:lib": "ng build ngx-navigation-drawer",
-    "pack:lib": "rimraf dist/ngx-contextmenu/*.tgz && npm run build:lib && cd dist/ngx-navigation-drawer && npm pack"
+    "pack:lib": "rimraf dist/ngx-navigation-drawer/*.tgz && npm run build:lib && cd dist/ngx-navigation-drawer && npm pack"
   },
   "peerDependencies": {
     "@angular/cdk": "^16.0.0",
