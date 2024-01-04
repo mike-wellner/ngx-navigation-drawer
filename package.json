@@ -1,23 +1,21 @@
 {
-	"name": "ngx-navigation-drawer",
+	"name": "ngx-navigation-drawer-demo",
 	"version": "1.0.0",
-  "description": "An Angular component representing a navigation drawer",
+  "description": "Demo for an angular component representing a navigation drawer",
   "author": "Mike Wellner <mike.wellner.dev@gmail.com>",
   "license": "commercial",
   "private": true,
   "scripts": {
     "ng": "ng",
-    "lint": "eslint -c .eslintrc.js --ext \".ts,.js\" src",
+    "start": "ng serve",
+    "build": "ng build",
+    "lint": "eslint -c .eslintrc.js --ext \".ts,.js\" src projects",
     "build:lib": "ng build ngx-navigation-drawer",
     "pack:lib": "rimraf dist/ngx-navigation-drawer/*.tgz && npm run build:lib && cd dist/ngx-navigation-drawer && npm pack"
   },
-  "peerDependencies": {
-    "@angular/cdk": "^16.0.0",
-    "@angular/common": "^16.0.0",
-    "@angular/core": "^16.0.0"
-  },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.0",
+    "@angular/animations": "^16.0.0",
     "@angular/cdk": "^16.0.0",
     "@angular/cli": "^16.0.0",
     "@angular/common": "^16.0.0",

@@ -1,0 +1,18 @@
+<!-- Navigation drawer -->
+<div class="navigation">
+  <app-navigation-drawer #navigationDrawer
+    [mainNavigationDrawerItems]="MAIN_NAVIGATION_DRAWER_ITEMS"
+    [subNavigationDrawerItems]="SUB_NAVIGATION_DRAWER_ITEMS"
+    [mainFolded]="false"
+    [subFolded]="true"
+    [enableMainFolding]="true"
+    [enableSubFolding]="true"
+    [currentMainId]="1"
+    [currentSubId]="1"
+  >
+    <!-- Navigation drawer content projection -->
+    <div class="projection-wrapper">
+      <span>projection-content</span>
+    </div>
+  </app-navigation-drawer>
+</div>

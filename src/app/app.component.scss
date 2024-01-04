@@ -1,0 +1,13 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 440px;
+  background-color: rgb(255, 255, 255);
+
+  app-navigation-drawer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}

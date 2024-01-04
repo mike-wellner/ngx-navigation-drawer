@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "node",
+    "outDir": "/out-tsc/app",
+    "sourceMap": false,
+    "declaration": false,
+    "declarationMap": false,
+    "inlineSources": false,
+    "experimentalDecorators": true,
+    "lib": ["dom", "es2022"],
+    "typeRoots": ["node_modules/@types"],
+    "paths": {
+      "ngx-navigation-drawer": [
+        "dist/ngx-navigation-drawer"
+      ],
+      "ngx-navigation-drawer/*": [
+        "dist/ngx-navigation-drawer/*"
+      ]
+    },
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": false,
+
+  },
+  "compileOnSave": false,
+  "buildOnSave": false
+}
