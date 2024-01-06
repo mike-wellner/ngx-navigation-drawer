@@ -1,6 +1,6 @@
 {
 	"name": "ngx-navigation-drawer",
-	"version": "1.0.0",
+	"version": "1.0.1",
   "description": "An Angular component representing a navigation drawer",
   "author": "Mike Wellner <mike.wellner.dev@gmail.com>",
   "license": "commercial",

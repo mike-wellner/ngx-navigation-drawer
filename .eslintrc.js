@@ -10,12 +10,11 @@ module.exports = {
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-      "project": "tsconfig.json",
+      "project": "tsconfig.base.json",
       "sourceType": "module"
   },
   "plugins": [
       "eslint-plugin-import",
-      "eslint-plugin-jsdoc",
       "@angular-eslint/eslint-plugin",
       "@angular-eslint/eslint-plugin-template",
       "eslint-plugin-prefer-arrow"
@@ -26,7 +25,7 @@ module.exports = {
           "error",
           {
               "type": "element",
-              "prefix": "app",
+              "prefix": "ngx",
               "style": "kebab-case"
           }
       ],
@@ -36,7 +35,7 @@ module.exports = {
           "error",
           {
               "type": "attribute",
-              "prefix": "app",
+              "prefix": "ngx",
               "style": "camelCase"
           }
       ],
@@ -218,10 +217,6 @@ module.exports = {
       ],
       "id-match": "error",
       "import/no-deprecated": "warn",
-      "jsdoc/check-alignment": "error",
-      "jsdoc/check-indentation": "error",
-      "jsdoc/newline-after-description": "error",
-      "jsdoc/no-types": "error",
       "max-classes-per-file": "off",
       "max-len": [
           "error",

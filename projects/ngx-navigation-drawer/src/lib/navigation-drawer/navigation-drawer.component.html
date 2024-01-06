@@ -21,7 +21,7 @@
   <div class="navigation-drawer-items" autofocus>
     <!-- main -->
     <div class="navigation-drawer-main-items right-border" [ngClass]="{ 'main-folded': mainFolded }">
-      <app-navigation-drawer-item
+      <ngx-navigation-drawer-item
         *ngFor="let item of mainNavigationDrawerItems; let i = index"
         [icon]="item.icon"
         [description]="item.description"
@@ -33,12 +33,12 @@
         (focusin)="onMainFocus(item.id)"
         (focusout)="onMainBlur()"
         tabindex={{i+1}}>
-      </app-navigation-drawer-item>
+      </ngx-navigation-drawer-item>
     </div>
 
     <!-- sub -->
     <div class="navigation-drawer-sub-items right-border" [ngClass]="{ 'sub-folded': subFolded }">
-      <app-navigation-drawer-item
+      <ngx-navigation-drawer-item
         *ngFor="let item of getSubItemsForMainId(currentMainId); let j = index"
         [icon]="item.icon"
         [description]="item.description"
@@ -50,7 +50,7 @@
         (focusin)="onSubFocus(item.id)"
         (focusout)="onSubBlur()"
         tabindex={{j+1}}>
-      </app-navigation-drawer-item>
+      </ngx-navigation-drawer-item>
     </div>
   </div>
 </div>

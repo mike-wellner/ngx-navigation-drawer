@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
  *
  */
 @Component({
-  selector: 'app-navigation-drawer-item',
+  selector: 'ngx-navigation-drawer-item',
   templateUrl: './navigation-drawer-item.component.html',
   styleUrls: ['./navigation-drawer-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

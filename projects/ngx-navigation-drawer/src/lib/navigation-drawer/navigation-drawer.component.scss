@@ -7,7 +7,7 @@ $unfolded-width: 181px;
   border-right: 1px solid $secondary-grayscale;
 }
 
-app-navigation-drawer-item:focus  {
+ngx-navigation-drawer-item:focus  {
   outline: $secondary-grayscale solid 0px;
   ::ng-deep .navigation-drawer-item {
     border: 1px solid $soft-black !important;
