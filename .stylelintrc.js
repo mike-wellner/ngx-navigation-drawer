@@ -26,13 +26,10 @@ module.exports = {
     // Needed for ::ng-deep
     "selector-pseudo-element-no-unknown": null,
 
-    //
-    // Should be changed to the default or other values but takes alot of time to test and check the outcome
-    //
-    "scss/no-global-function-names": null, // TODO: Exchange deprecated function calls
-    "value-no-vendor-prefix": null, // TODO: Check if we actually need the vendor values
-    "property-no-vendor-prefix": null, // TODO: Check if we actually need the vendor properties
-    "no-descending-specificity": null // TODO: Most important! Will improve SCSS styling and produce less "why does this actually work???"
-
+    // Should be enabled
+    "scss/no-global-function-names": true,
+    "value-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "no-descending-specificity": true
   }
 };

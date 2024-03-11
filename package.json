@@ -13,13 +13,11 @@
     "pack:lib": "rimraf dist/ngx-navigation-drawer/*.tgz && npm run build:lib && cd dist/ngx-navigation-drawer && npm pack",
     "//": "<----- Linting ----->",
     "stylelint": "npx stylelint **/*.scss",
-    "stylelint-linux": "shopt -s globstar && npx stylelint **/*.scss",
     "stylelint-single": "npx stylelint",
     "stylelint-fix": "npx stylelint **/*.scss --fix",
     "lint": "eslint -c .eslintrc.js --ext \".ts,.js\" src projects",
     "lint-circle": "npx madge --circular --extensions ts src projects",
     "prettier": "prettier **/*.scss --write",
-    "prettier-linux": "shopt -s globstar && prettier **/*.scss --write",
     "prettier-single": "prettier --write"
   },
   "devDependencies": {
