@@ -1,4 +1,4 @@
-@import '../style_variables.scss';
+@import '../style_variables';
 
 $folded-width: 51px;
 $unfolded-width: 181px;
@@ -7,8 +7,9 @@ $unfolded-width: 181px;
   border-right: 1px solid $secondary-grayscale;
 }
 
-ngx-navigation-drawer-item:focus  {
-  outline: $secondary-grayscale solid 0px;
+ngx-navigation-drawer-item:focus {
+  outline: $secondary-grayscale solid 0;
+
   ::ng-deep .navigation-drawer-item {
     border: 1px solid $soft-black !important;
   }
@@ -26,9 +27,11 @@ ngx-navigation-drawer-item:focus  {
   &.main-folded:not(.sub-folded) {
     width: calc($unfolded-width + $folded-width);
   }
+
   &.sub-folded:not(.main-folded) {
     width: calc($unfolded-width + $folded-width);
   }
+
   &.main-folded.sub-folded {
     width: calc($folded-width + $folded-width);
   }
@@ -44,7 +47,7 @@ ngx-navigation-drawer-item:focus  {
     border-right: 1px solid $secondary-grayscale;
 
     mat-icon {
-      padding: 3px 5px 3px 5px;
+      padding: 3px 5px;
       position: relative;
     }
   }
@@ -77,6 +80,7 @@ ngx-navigation-drawer-item:focus  {
     flex-direction: column;
     height: 100%;
     width: calc($unfolded-width - 1px);
+
     &.main-folded {
       width: calc($folded-width - 1px);
     }
@@ -87,10 +91,9 @@ ngx-navigation-drawer-item:focus  {
     flex-direction: column;
     height: 100%;
     width: calc($unfolded-width - 1px);
+
     &.sub-folded {
       width: calc($folded-width - 1px);
     }
   }
 }
-
-

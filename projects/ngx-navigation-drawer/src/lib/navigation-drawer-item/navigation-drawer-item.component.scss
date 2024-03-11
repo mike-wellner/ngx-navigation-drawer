@@ -1,7 +1,7 @@
-@import '../style_variables.scss';
+@import '../style_variables';
 
 .item {
-  display:flex;
+  display: flex;
   flex-direction: row;
   width: calc(100% - 12px); // 2 * 5px margin + 2 * 1px border
   height: 38px;
@@ -30,9 +30,11 @@
     width: 38px;
     justify-content: center;
     align-items: center;
+
     mat-icon {
       align-items: center;
     }
+
     flex-shrink: 0;
   }
 
