@@ -43,7 +43,7 @@ export class NavigationDrawerComponent {
   }
 
   @HostListener('window:keydown', ['$event'])
-  private translateEnterToClick(event: KeyboardEvent) {
+  private translateEnterToClick(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
       if (this.focusOnMain) {
         const mainItem = this.getItemForMainId(this.currentFocusMainId);

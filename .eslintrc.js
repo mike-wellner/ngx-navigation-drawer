@@ -1,7 +1,7 @@
 module.exports = {
   "env": {
       "browser": true,
-      "es6": true,
+      "es2022": true,
       "node": true
   },
   "extends": [
@@ -78,6 +78,9 @@ module.exports = {
       ],
       "@typescript-eslint/consistent-type-assertions": "error",
       "@typescript-eslint/dot-notation": "error",
+      "@typescript-eslint/explicit-function-return-type": ["error", {
+        "allowExpressions": true
+      }],
       "@typescript-eslint/indent": [
           "error",
           2,
@@ -195,6 +198,7 @@ module.exports = {
       "@typescript-eslint/unified-signatures": "error",
       "arrow-body-style": "error",
       "complexity": "off",
+      "consistent-return": "error",
       "constructor-super": "error",
       "curly": "error",
       "eol-last": "error",
@@ -269,6 +273,18 @@ module.exports = {
       "no-undef-init": "error",
       "no-underscore-dangle": "error",
       "no-unsafe-finally": "error",
+      "require-await": "off",
+      "@typescript-eslint/require-await": "error",
+      "no-unused-labels": "error",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": ["error", {
+        "argsIgnorePattern": '^_',
+        "varsIgnorePattern": '^_',
+        "caughtErrorsIgnorePattern": '^_',
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }],
       "no-unused-labels": "error",
       "no-var": "error",
       "object-shorthand": "off",
