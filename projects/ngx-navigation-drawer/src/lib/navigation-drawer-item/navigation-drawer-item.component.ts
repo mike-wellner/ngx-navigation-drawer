@@ -9,7 +9,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   selector: 'ngx-navigation-drawer-item',
   templateUrl: './navigation-drawer-item.component.html',
   styleUrls: ['./navigation-drawer-item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class NavigationDrawerItemComponent {
 

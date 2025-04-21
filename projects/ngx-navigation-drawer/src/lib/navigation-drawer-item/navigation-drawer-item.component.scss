@@ -1,4 +1,16 @@
-@import '../style_variables';
+@use '../style_variables';
+
+:host {
+  --navigation-drawer-font-family: #{style_variables.$navigation-drawer-font-family};
+  --navigation-drawer-font-size: #{style_variables.$navigation-drawer-font-size};
+  --navigation-drawer-font-weight: #{style_variables.$navigation-drawer-font-weight};
+  --navigation-drawer-soft-black: #{style_variables.$soft-black};
+  --navigation-drawer-background-color: #{style_variables.$background-color};
+  --navigation-drawer-primary-color: #{style_variables.$primary-color};
+  --navigation-drawer-secondary-color: #{style_variables.$secondary-color};
+  --navigation-drawer-primary-grayscale: #{style_variables.$primary-grayscale};
+  --navigation-drawer-secondary-grayscale: #{style_variables.$secondary-grayscale};
+}
 
 .item {
   display: flex;
@@ -10,14 +22,14 @@
   justify-content: flex-start;
   user-select: none;
   white-space: nowrap;
-  color: $primary-grayscale;
-  background-color: $background-color;
+  color: var(--navigation-drawer-primary-grayscale);
+  background-color: var(--navigation-drawer-background-color);
   border-radius: 3px;
-  border: 1px solid $background-color;
+  border: 1px solid var(--navigation-drawer-background-color);
   cursor: pointer;
-  font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  font-weight: 700;
+  font-family: var(--navigation-drawer-font-family);
+  font-size: var(--navigation-drawer-font-size);
+  font-weight: var(--navigation-drawer-font-weight);
   letter-spacing: 0.2px;
   line-height: 20px;
   text-decoration-line: none;
@@ -49,11 +61,11 @@
 }
 
 .item:hover {
-  color: $primary-color;
-  background-color: $secondary-color;
+  color: var(--navigation-drawer-primary-color);
+  background-color: var(--navigation-drawer-secondary-color);
 }
 
 .selected {
-  color: $soft-black;
-  background-color: $secondary-grayscale;
+  color: var(--navigation-drawer-soft-black);
+  background-color: var(--navigation-drawer-secondary-grayscale);
 }

@@ -11,7 +11,8 @@ import { I_NavigationDrawerItem } from '../navigation-drawer-item';
   selector: 'ngx-navigation-drawer',
   templateUrl: './navigation-drawer.component.html',
   styleUrls: ['./navigation-drawer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class NavigationDrawerComponent {
 
