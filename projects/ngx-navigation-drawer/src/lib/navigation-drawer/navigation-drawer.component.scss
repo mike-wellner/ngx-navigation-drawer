@@ -1,27 +1,18 @@
-@use '../style_variables';
+@use '../style_variables' as vars;
 
-:host {
-  --navigation-drawer-white: #[style_variables.$white];
-  --navigation-drawer-soft-black: #[style_variables.$soft-black];
-  --navigation-drawer-background-color: #[style_variables.$background-color];
-  --navigation-drawer-primary-color: #[style_variables.$primary-color];
-  --navigation-drawer-secondary-color: #[style_variables.$secondary-color];
-  --navigation-drawer-primary-grayscale: #[style_variables.$primary-grayscale];
-  --navigation-drawer-secondary-grayscale: #[style_variables.$secondary-grayscale];
-}
 
 $folded-width: 51px;
 $unfolded-width: 181px;
 
 .right-border {
-  border-right: 1px solid var(--navigation-drawer-secondary-grayscale);
+  border-right: 1px solid var(--navigation-drawer-secondary-grayscale, vars.$secondary-grayscale);
 }
 
 ngx-navigation-drawer-item:focus {
-  outline: var(--navigation-drawer-secondary-grayscale) solid 0;
+  outline: var(--navigation-drawer-secondary-grayscale, vars.$secondary-grayscale) solid 0;
 
   ::ng-deep .navigation-drawer-item {
-    border: 1px solid var(--navigation-drawer-soft-black) !important;
+    border: 1px solid var(--navigation-drawer-soft-black, vars.$soft-black) !important;
   }
 }
 
@@ -32,7 +23,7 @@ ngx-navigation-drawer-item:focus {
   justify-content: flex-start;
   text-align: center;
   height: 100%;
-  background-color: var(--navigation-drawer-white);
+  background-color: var(--navigation-drawer-white, vars.$white);
 
   &.main-folded:not(.sub-folded) {
     width: calc($unfolded-width + $folded-width);
@@ -53,8 +44,8 @@ ngx-navigation-drawer-item:focus {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    color: var(--navigation-drawer-primary-grayscale);
-    border-right: 1px solid var(--navigation-drawer-secondary-grayscale);
+    color: var(--navigation-drawer-primary-grayscale, vars.$primary-grayscale);
+    border-right: 1px solid var(--navigation-drawer-secondary-grayscale , vars.$secondary-grayscale);
 
     mat-icon {
       padding: 3px 5px;
@@ -63,8 +54,8 @@ ngx-navigation-drawer-item:focus {
   }
 
   .navigation-folding-control:hover {
-    color: var(--navigation-drawer-primary-color);
-    background-color: var(--navigation-drawer-secondary-color);
+    color: var(--navigation-drawer-primary-color, vars.$primary-color);
+    background-color: var(--navigation-drawer-secondary-color, vars.$secondary-color);
   }
 
   .navigation-drawer-projection {
@@ -76,7 +67,7 @@ ngx-navigation-drawer-item:focus {
   .navigation-drawer-seperator {
     width: calc(100% - 1px);
     height: 1px;
-    background-color: var(--navigation-drawer-secondary-grayscale);
+    background-color: var(--navigation-drawer-secondary-grayscale, vars.$secondary-grayscale);
   }
 
   .navigation-drawer-items {

@@ -1,16 +1,4 @@
-@use '../style_variables';
-
-:host {
-  --navigation-drawer-font-family: #{style_variables.$navigation-drawer-font-family};
-  --navigation-drawer-font-size: #{style_variables.$navigation-drawer-font-size};
-  --navigation-drawer-font-weight: #{style_variables.$navigation-drawer-font-weight};
-  --navigation-drawer-soft-black: #{style_variables.$soft-black};
-  --navigation-drawer-background-color: #{style_variables.$background-color};
-  --navigation-drawer-primary-color: #{style_variables.$primary-color};
-  --navigation-drawer-secondary-color: #{style_variables.$secondary-color};
-  --navigation-drawer-primary-grayscale: #{style_variables.$primary-grayscale};
-  --navigation-drawer-secondary-grayscale: #{style_variables.$secondary-grayscale};
-}
+@use '../style_variables' as vars;
 
 .item {
   display: flex;
@@ -22,14 +10,14 @@
   justify-content: flex-start;
   user-select: none;
   white-space: nowrap;
-  color: var(--navigation-drawer-primary-grayscale);
-  background-color: var(--navigation-drawer-background-color);
+  color: var(--navigation-drawer-primary-grayscale, vars.$primary-grayscale);
+  background-color: var(--navigation-drawer-background-color, vars.$background-color);
   border-radius: 3px;
-  border: 1px solid var(--navigation-drawer-background-color);
+  border: 1px solid var(--navigation-drawer-background-color, vars.$background-color);
   cursor: pointer;
-  font-family: var(--navigation-drawer-font-family);
-  font-size: var(--navigation-drawer-font-size);
-  font-weight: var(--navigation-drawer-font-weight);
+  font-family: var(--navigation-drawer-font-family, vars.$navigation-drawer-font-family);
+  font-size: var(--navigation-drawer-font-size, vars.$navigation-drawer-font-size);
+  font-weight: var(--navigation-drawer-font-weight, vars.$navigation-drawer-font-weight);
   letter-spacing: 0.2px;
   line-height: 20px;
   text-decoration-line: none;
@@ -61,11 +49,11 @@
 }
 
 .item:hover {
-  color: var(--navigation-drawer-primary-color);
-  background-color: var(--navigation-drawer-secondary-color);
+  color: var(--navigation-drawer-primary-color, vars.$primary-color);
+  background-color: var(--navigation-drawer-secondary-color, vars.$secondary-color);
 }
 
 .selected {
-  color: var(--navigation-drawer-soft-black);
-  background-color: var(--navigation-drawer-secondary-grayscale);
+  color: var(--navigation-drawer-soft-black, vars.$soft-black);
+  background-color: var(--navigation-drawer-secondary-grayscale, vars.$secondary-grayscale);
 }
