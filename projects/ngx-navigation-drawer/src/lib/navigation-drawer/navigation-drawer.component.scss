@@ -74,6 +74,8 @@ ngx-navigation-drawer-item:focus {
     display: flex;
     flex-direction: row;
     height: calc(100% - 160px); // 128px + 1px + 1px + 30px
+    overflow-y: scroll;
+    scrollbar-width: none;
   }
 
   .navigation-drawer-main-items {
