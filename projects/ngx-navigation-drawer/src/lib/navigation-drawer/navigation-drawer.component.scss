@@ -8,14 +8,6 @@ $unfolded-width: 181px;
   border-right: 1px solid var(--navigation-drawer-secondary-grayscale, vars.$secondary-grayscale);
 }
 
-ngx-navigation-drawer-item:focus {
-  outline: var(--navigation-drawer-secondary-grayscale, vars.$secondary-grayscale) solid 0;
-
-  ::ng-deep .navigation-drawer-item {
-    border: 1px solid var(--navigation-drawer-soft-black, vars.$soft-black) !important;
-  }
-}
-
 .navigation-drawer {
   width: calc($unfolded-width + $unfolded-width);
   display: flex;

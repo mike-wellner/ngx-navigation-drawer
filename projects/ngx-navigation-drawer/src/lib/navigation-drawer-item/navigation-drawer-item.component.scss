@@ -1,5 +1,20 @@
 @use '../style_variables' as vars;
 
+:host {
+  .item:hover {
+    color: var(--navigation-drawer-primary-color, vars.$primary-color);
+    background-color: var(--navigation-drawer-secondary-color, vars.$secondary-color);
+  }
+
+  &:focus {
+    outline: var(--navigation-drawer-secondary-grayscale, vars.$secondary-grayscale) solid 0;
+    .item {
+      color: var(--navigation-drawer-primary-color, vars.$primary-color);
+      background-color: var(--navigation-drawer-secondary-color, vars.$secondary-color);
+    }
+  }
+}
+
 .item {
   display: flex;
   flex-direction: row;
@@ -46,11 +61,6 @@
     text-overflow: ellipsis;
     flex-shrink: 1;
   }
-}
-
-.item:hover {
-  color: var(--navigation-drawer-primary-color, vars.$primary-color);
-  background-color: var(--navigation-drawer-secondary-color, vars.$secondary-color);
 }
 
 .selected {

@@ -49,7 +49,7 @@
         (click)="subNavigation(item.id, item.action)"
         (focusin)="onSubFocus(item.id)"
         (focusout)="onSubBlur()"
-        tabindex={{j+1}}>
+        tabindex={{mainNavigationDrawerItems.length+j+1}}>
       </ngx-navigation-drawer-item>
     </div>
   </div>
