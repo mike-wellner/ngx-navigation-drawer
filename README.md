@@ -4,16 +4,9 @@ This angular navigation drawer module features fold functionality and a dedicate
 
 ## Preview
 
-<div style="display: flex; gap: 10px; width: 100%;">
-  <div style="width: 55%;">
-    <p style="text-align: start;">Unfolded State</p>
-    <img src="sample_unfolded.png">
-  </div>
-  <div style="width: 35%;">
-    <p style="text-align: start;">Folded State</p>
-    <img src="sample_folded.png">
-  </div>
-</div>
+| Folded State | Unfolded State |
+|--------------|----------------|
+| ![Unfolded Navigation Drawer](sample_unfolded.png) | ![Folded Navigation Drawer](sample_folded.png) |
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
