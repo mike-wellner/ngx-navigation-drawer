@@ -32,4 +32,4 @@ export const otherOptions: MatTooltipDefaultOptions = {
   ],
 })
 
-export class NavigationDrawerModule {}
+export class NavigationDrawerModule { }

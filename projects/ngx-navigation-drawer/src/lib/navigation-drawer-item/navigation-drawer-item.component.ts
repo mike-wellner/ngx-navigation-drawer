@@ -19,5 +19,5 @@ export class NavigationDrawerItemComponent {
   @Input() folded = true;
   @Input() selected = false;
 
-  constructor() {}
+  constructor() { }
 }

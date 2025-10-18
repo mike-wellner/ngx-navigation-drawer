@@ -12,4 +12,4 @@ import { NavigationDrawerModule } from 'projects/ngx-navigation-drawer/src/publi
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
