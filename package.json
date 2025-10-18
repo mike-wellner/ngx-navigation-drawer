@@ -2,8 +2,12 @@
   "name": "ngx-navigation-drawer-demo",
   "version": "1.1.6",
   "description": "Demo for an angular component representing a navigation drawer",
-  "author": "Mike Wellner <mike.wellner.dev@gmail.com>",
-  "license": "commercial",
+  "author": {
+    "name": "Mike Wellner",
+    "email": "mike.wellner.dev@gmail.com",
+    "url": "https://github.com/mike-wellner"
+  },
+  "license": "MIT",
   "private": true,
   "scripts": {
     "ng": "ng",
@@ -11,12 +15,14 @@
     "build": "ng build",
     "build:lib": "ng build ngx-navigation-drawer",
     "pack:lib": "rimraf dist/ngx-navigation-drawer/*.tgz && npm run build:lib && cd dist/ngx-navigation-drawer && npm pack",
-    "//": "<----- Linting ----->",
+
     "stylelint": "npx stylelint **/*.scss",
     "stylelint-single": "npx stylelint",
     "stylelint-fix": "npx stylelint **/*.scss --fix",
+
     "lint": "eslint -c .eslintrc.js --ext \".ts,.js\" src projects",
     "lint-circle": "npx madge --circular --extensions ts src projects",
+
     "prettier": "prettier **/*.scss --write",
     "prettier-single": "prettier --write"
   },

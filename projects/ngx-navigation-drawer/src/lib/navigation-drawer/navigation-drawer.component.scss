@@ -1,6 +1,5 @@
 @use '../style_variables' as vars;
 
-
 $folded-width: 51px;
 $unfolded-width: 181px;
 
@@ -37,7 +36,7 @@ $unfolded-width: 181px;
     align-items: center;
     justify-content: flex-start;
     color: var(--navigation-drawer-primary-grayscale, vars.$primary-grayscale);
-    border-right: 1px solid var(--navigation-drawer-secondary-grayscale , vars.$secondary-grayscale);
+    border-right: 1px solid var(--navigation-drawer-secondary-grayscale, vars.$secondary-grayscale);
 
     mat-icon {
       padding: 3px 5px;

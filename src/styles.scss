@@ -1,11 +1,13 @@
 @use '@angular/material' as mat;
 
 :root {
-  @include mat.tooltip-overrides((
-    container-color: #212121,
-    supporting-text-color: #ffffff,
-    container-shape: 6px
-  ));
+  @include mat.tooltip-overrides(
+    (
+      container-color: #212121,
+      supporting-text-color: #ffffff,
+      container-shape: 6px
+    )
+  );
 }
 
 .projection-wrapper {

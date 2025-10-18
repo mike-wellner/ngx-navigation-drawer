@@ -2,8 +2,12 @@
 	"name": "ngx-navigation-drawer",
 	"version": "1.1.6",
   "description": "An Angular component representing a navigation drawer",
-  "author": "Mike Wellner <mike.wellner.dev@gmail.com>",
-  "license": "commercial",
+  "author": {
+    "name": "Mike Wellner",
+    "email": "mike.wellner.dev@gmail.com",
+    "url": "https://github.com/mike-wellner"
+  },
+  "license": "MIT",
   "private": true,
   "peerDependencies": {
     "@angular/cdk": "^19.0.0",

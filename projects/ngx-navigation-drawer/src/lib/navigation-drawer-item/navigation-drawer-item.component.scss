@@ -8,6 +8,7 @@
 
   &:focus {
     outline: var(--navigation-drawer-secondary-grayscale, vars.$secondary-grayscale) solid 0;
+
     .item {
       color: var(--navigation-drawer-primary-color, vars.$primary-color);
       background-color: var(--navigation-drawer-secondary-color, vars.$secondary-color);
