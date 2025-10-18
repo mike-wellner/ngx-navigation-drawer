@@ -4,8 +4,8 @@ This angular navigation drawer module features fold functionality and a dedicate
 
 ## Preview
 
-| Folded State | Unfolded State |
-|--------------|----------------|
+| Unfolded State | Folded State |
+|----------------|--------------|
 | ![Unfolded Navigation Drawer](sample_unfolded.png) | ![Folded Navigation Drawer](sample_folded.png) |
 
 ## License
