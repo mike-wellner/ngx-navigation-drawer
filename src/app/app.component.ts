@@ -42,26 +42,26 @@ export class AppComponent {
     { id: 36, parentId: 3, icon: 'place', description: 'Map', action: this.dummy.bind(this) as () => void },
 
     // Photos
-    { id: 41, parentId: 6, icon: 'view_module', description: 'Overview', action: this.dummy.bind(this) as () => void },
-    { id: 42, parentId: 6, icon: 'add', description: 'Add', action: this.dummy.bind(this) as () => void },
-    { id: 43, parentId: 6, icon: 'edit', description: 'Edit', action: this.dummy.bind(this) as () => void },
-    { id: 44, parentId: 6, icon: 'cloud', description: 'Upload', action: this.dummy.bind(this) as () => void },
-    { id: 45, parentId: 6, icon: 'show_chart', description: 'Statistic', action: this.dummy.bind(this) as () => void },
-    { id: 46, parentId: 6, icon: 'place', description: 'Map', action: this.dummy.bind(this) as () => void },
-    { id: 47, parentId: 6, icon: 'mood', description: 'Optimize', action: this.dummy.bind(this) as () => void },
-    { id: 48, parentId: 6, icon: 'filter_b_and_w', description: 'Colormode', action: this.dummy.bind(this) as () => void },
+    { id: 41, parentId: 4, icon: 'view_module', description: 'Overview', action: this.dummy.bind(this) as () => void },
+    { id: 42, parentId: 4, icon: 'add', description: 'Add', action: this.dummy.bind(this) as () => void },
+    { id: 43, parentId: 4, icon: 'edit', description: 'Edit', action: this.dummy.bind(this) as () => void },
+    { id: 44, parentId: 4, icon: 'cloud', description: 'Upload', action: this.dummy.bind(this) as () => void },
+    { id: 45, parentId: 4, icon: 'show_chart', description: 'Statistic', action: this.dummy.bind(this) as () => void },
+    { id: 46, parentId: 4, icon: 'place', description: 'Map', action: this.dummy.bind(this) as () => void },
+    { id: 47, parentId: 4, icon: 'mood', description: 'Optimize', action: this.dummy.bind(this) as () => void },
+    { id: 48, parentId: 4, icon: 'filter_b_and_w', description: 'Colormode', action: this.dummy.bind(this) as () => void },
 
     // Documents
-    { id: 51, parentId: 7, icon: 'view_module', description: 'Overview', action: this.dummy.bind(this) as () => void },
-    { id: 52, parentId: 7, icon: 'add', description: 'Add', action: this.dummy.bind(this) as () => void },
-    { id: 53, parentId: 7, icon: 'edit', description: 'Edit', action: this.dummy.bind(this) as () => void },
-    { id: 54, parentId: 7, icon: 'cloud', description: 'Upload', action: this.dummy.bind(this) as () => void },
-    { id: 55, parentId: 7, icon: 'show_chart', description: 'Statistic', action: this.dummy.bind(this) as () => void },
-    { id: 56, parentId: 7, icon: 'place', description: 'Map', action: this.dummy.bind(this) as () => void },
+    { id: 51, parentId: 5, icon: 'view_module', description: 'Overview', action: this.dummy.bind(this) as () => void },
+    { id: 52, parentId: 5, icon: 'add', description: 'Add', action: this.dummy.bind(this) as () => void },
+    { id: 53, parentId: 5, icon: 'edit', description: 'Edit', action: this.dummy.bind(this) as () => void },
+    { id: 54, parentId: 5, icon: 'cloud', description: 'Upload', action: this.dummy.bind(this) as () => void },
+    { id: 55, parentId: 5, icon: 'show_chart', description: 'Statistic', action: this.dummy.bind(this) as () => void },
+    { id: 56, parentId: 5, icon: 'place', description: 'Map', action: this.dummy.bind(this) as () => void },
 
-    { id: 61, parentId: 8, icon: 'view_module', description: 'Overview', action: this.dummy.bind(this) as () => void },
-    { id: 62, parentId: 8, icon: 'build_circle', description: 'Debug Console', action: this.dummy.bind(this) as () => void },
-    { id: 63, parentId: 8, icon: 'castle', description: 'Sandbox', action: this.dummy.bind(this) as () => void }
+    { id: 61, parentId: 6, icon: 'view_module', description: 'Overview', action: this.dummy.bind(this) as () => void },
+    { id: 62, parentId: 6, icon: 'build_circle', description: 'Debug Console', action: this.dummy.bind(this) as () => void },
+    { id: 63, parentId: 6, icon: 'castle', description: 'Sandbox', action: this.dummy.bind(this) as () => void }
   ];
 
   constructor() { }
